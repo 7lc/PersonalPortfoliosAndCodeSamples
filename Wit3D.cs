@@ -86,26 +86,26 @@ public partial class Wit3D : MonoBehaviour {
 			}    
 		}
     
-	    public void RecordingForWit()
-	    {
+    public void RecordingForWit()
+    {
 
-		// Debug
-		print("Thinking ...");
+	// Debug
+	print("Thinking ...");
 
-		// Save the audio file
-		Microphone.End(null);
-		SavWav.Save("record", commandClip);
+	// Save the audio file
+	Microphone.End(null);
+	SavWav.Save("record", commandClip);
 
-		// At this point, we can delete the existing audio clip
-		commandClip = null;
+	// At this point, we can delete the existing audio clip
+	commandClip = null;
 
-		//Grab the most up-to-date JSON file
-		// url = "https://api.wit.ai/message?v=20160305&q=Put%20the%20box%20on%20the%20shelf";
-		token = "2A7QSFYK2MFZ3N6RWMAAXR3HJV2ROFLW";
+	//Grab the most up-to-date JSON file
+	// url = "https://api.wit.ai/message?v=20160305&q=Put%20the%20box%20on%20the%20shelf";
+	token = "2A7QSFYK2MFZ3N6RWMAAXR3HJV2ROFLW";
 
-		//Start a coroutine called "WaitForRequest" with that WWW variable passed in as an argument
-		string witAiResponse = GetJSONText(Application.persistentDataPath+"/record.wav");
-		print(witAiResponse);
-		Handle(witAiResponse);
-	    }
+	//Start a coroutine called "WaitForRequest" with that WWW variable passed in as an argument
+	string witAiResponse = GetJSONText(Application.persistentDataPath+"/record.wav");
+	print(witAiResponse);
+	Handle(witAiResponse);
+    }
 }
